@@ -10,7 +10,7 @@ env = Environment(loader=FileSystemLoader('.'))
 http = urllib3.PoolManager()
 
 def get_latest_posts(max_posts=5):
-    r = http.request('GET', 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frafnixg.dev%2Frss%2F')
+    r = http.request('GET', 'https://api.rss2json.com/v1/api.json?rss_url=https://blog.rafnixg.dev/rss.xml')
     data = json.loads(r.data.decode('utf-8'))['items']
     return data[0:max_posts]
 
